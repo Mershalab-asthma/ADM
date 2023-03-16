@@ -1,0 +1,16 @@
+library(pheatmap)
+# Matrix containg that conatins gene-signture with log2fold change values from multiple tissue/cell datasets
+dat<-read.csv("NEC_genes_4datasetFC_Lasso.csv", row.names = 1)
+dat<-read.csv("AEC_genes_4datasetFC_lasso.csv", row.names = 1)
+dat1<-as.matrix(dat)
+pheatmap(dat1, scale = "column")
+# Heat map
+pheatmap(dat1, display_numbers = TRUE,
+         number_color = "black",
+         fontsize_number = 10)
+
+x<-pheatmap(dat1,
+            display_numbers = TRUE,
+            number_color = "black",
+            fontsize_number = 8, cex = 0.7)
+
