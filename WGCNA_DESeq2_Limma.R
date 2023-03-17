@@ -42,8 +42,8 @@ dat3<-dat2[dat2$CV > 4,]
 
 #WGCNA analysis 
 dat<-read.csv("dat3.csv", row.names = 1) # construct WGCNA based Hypervariable genes
-dim(dat3)
-input_mat = t(dat3)
+dim(dat)
+input_mat = t(dat)
 # Choose a set of soft threshold parameters
 powers = c(c(1:10), seq(from = 12, to=20, by=2))
 
