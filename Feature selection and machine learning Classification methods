@@ -92,6 +92,15 @@ ggbarplot(dt, x = "ID", y = "Rank",
 
 # machine learning analysis based RF and SVM classifier comparison 
 # load selected Genes for asthma classification model using ML methods.
+
+metric <- "Accuracy"
+control <- trainControl(method="cv", 
+                        number=5, 
+                        repeats = 5, 
+                        savePredictions = "final", 
+                        search = "grid", 
+                        classProbs = TRUE)
+
 datM<-read.csv("GSE67472.modulegene854.csv", row.names = 1)
 datD<-read.csv("GSE67472.DEGgene3665.csv", row.names = 1)
 datB<-read.csv("GSE67472_boruta30genes.csv", row.names = 1)
